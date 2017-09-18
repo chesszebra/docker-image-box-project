@@ -11,8 +11,7 @@ env:
     - VERSION=latest VERSION_ALIAS=php-7.1
 
 before_script:
-  - if [[ "$VERSION" != "latest" ]]; then cd "src/$VERSION"; fi
-  - if [[ "$VERSION" == "latest" ]]; then cd "src/$VERSION_ALIAS"; fi
+  - cd src/
   - IMAGE_NAME="chesszebra/$(echo "$TRAVIS_REPO_SLUG" | cut -c 25-):${VERSION}"
 
 script:
